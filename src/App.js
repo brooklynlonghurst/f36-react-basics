@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import {useState} from "react"
+import React from "react"
 import './App.css';
+// import Bravo from './components/Bravo'
+
 
 function App() {
+  
+  const [userInput, setUserInput] = useState("")
+  const [name, setName] = useState("")
+  
+  
+  const handleChange = (e) => {
+    setUserInput(e.target.value)
+  }
+  
+  const handleClick = () => {
+    setName(userInput)
+    setUserInput("")
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>App: {name}</h1>
+      <input placeholder="What's your name?" value={userInput} onChange={handleChange} />
+      <button onClick={handleClick}>Change name</button>
     </div>
   );
 }
