@@ -1,31 +1,21 @@
 import {useState} from "react"
 import React from "react"
-import './App.css';
-// import Bravo from './components/Bravo'
-import Delta from "./components/Delta"
+import Form from "./components/Form"
+import List from "./components/List"
 
 
 function App() {
+  const [taskList, setTaskList] = useState([])
   
-  const [userInput, setUserInput] = useState("")
-  const [name, setName] = useState("")
+ 
   
-  
-  const handleChange = (e) => {
-    setUserInput(e.target.value)
-    setName(userInput)
-  }
-  
-  const handleClick = () => {
-    setName(userInput)
-    setUserInput("")
-  }
+  const addTask = (newTask) => setTaskList([...taskList, newTask])
   
   return (
     <div className="App">
-      <h1>App: {name}</h1>
-      <Delta changeName={handleChange}/>
-      {/* <Bravo personName={name}/> */}
+      <h1>App: </h1>
+      <Form addTask={addTask}/>
+      <List />
     </div>
   );
 }
