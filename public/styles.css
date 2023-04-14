@@ -5,8 +5,8 @@
   
     /* * Pick an accent color below by commenting in one set, and commenting the others out */
     /* !Salmon */
-    /* --accent: 7, 82%; */
-    /* --l: 63%; */ 
+    /* --accent: 7, 82%;
+    --l: 63%;  */
   
     /* !Blue */
     /* --accent: 198, 76%;
@@ -17,8 +17,8 @@
     --l: 51%; */
   
     /* !Pink */
-    /* --accent: 334, 100%;
-    --l: 50%; */
+    --accent: 334, 100%;
+    --l: 50%;
   
     /* !Purple */
     /* --accent: 265, 83%;
@@ -32,7 +32,7 @@
     /* --accent: 36, 100%;
     --l: 56%; */
   
-    --color-primary: hsl(var(7, 82%), var(63%));
+    --color-primary: hsl(var(--accent), var(--l))
 }
   
 body {
